@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<!--
+    WARNING! Make sure that you match all Quasar related
+    tags to the same version! (Below it's "@1.14.5")
+  -->
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet"
+        type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@1.14.5/dist/quasar.min.css" rel="stylesheet" type="text/css">
+
+    <style>
+        :root {
+            --color-primary: #673ab7;
+            --color-secondary: #f8bbd0;
+
+            /* tamanho da fonte padrão: 16px - 100% - 1rem
+            rem é relativo ao :root */
+            font-size: 60%;
+            /* controle das medidas rem */
+        }
+
+        .bg-image {
+            background-image: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="q-app">
+
+
+        <q-layout>
+            <q-page-container>
+                <q-page class="flex bg-image flex-center">
+                    <q-card :style="$q.screen.lt.md?{'width': '80%'}:{'width':'50%'}" class="bg-transparent">
+                        <q-card-section class="q-pa-none">
+                            <div class="text-center q-ma-md">
+                                <!-- <q-avatar size="103px" class="absolute-center shadow-10"> -->
+                                <img src="avatar.jfif" style="border-radius: 50%; width: 200px;">
+                                <!-- </q-avatar> -->
+                            </div>
+                        </q-card-section>
+
+                        <!-- <q-separator dark /> -->
+
+                        <q-card-section>
+                            <div class="text-center q-ma-md">
+                                <div class="col text-h2 ellipsis">
+                                    @BarbaraMK
+                                </div>
+
+                            </div>
+                        </q-card-section>
+                        <q-card-section>
+
+
+                            <div class="text-center q-ma-md">
+                                <div class="col ">
+                                    <q-btn size="xl" class="full-width q-pa-md" type="a"
+                                        href="http://wa.me/+5527981823734" target="_blank"
+                                        style="background: var(--color-primary); color: var(--color-secondary)">
+                                        Faça seu pedido pelo
+                                        WhatsApp</q-btn>
+
+                                </div>
+
+                                <div class="col q-mt-md">
+                                    <q-btn size="xl" class="full-width q-pa-md" type="a"
+                                        href="https://www.marykay.com.br/barbaraff" target="_blank"
+                                        style="background: var(--color-primary); color: var(--color-secondary)">
+                                        Visite o meu site MK!<br />
+                                        Obtenha informações sobre produtos <br /> e faça seu pedido</q-btn>
+
+                                </div>
+
+                            </div>
+
+                        </q-card-section>
+                    </q-card>
+                </q-page>
+            </q-page-container>
+        </q-layout>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/quasar@1.14.5/dist/quasar.umd.min.js"></script>
+
+    <script>
+        new Vue({
+            el: '#q-app',
+            data: function () {
+                return {
+                    username: "a",
+                    password: "b"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
