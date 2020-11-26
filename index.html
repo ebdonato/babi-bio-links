@@ -26,6 +26,8 @@
         }
     </style>
 
+    <title>@BarbaraMK</title>
+
 </head>
 
 <body>
@@ -44,11 +46,9 @@
                             </div>
                         </q-card-section>
 
-                        <!-- <q-separator dark /> -->
-
                         <q-card-section>
                             <div class="text-center q-ma-md">
-                                <div class="col text-h2 ellipsis">
+                                <div class="col text-h2 ellipsis q-pa-xs">
                                     @BarbaraMK
                                 </div>
 
@@ -56,23 +56,14 @@
                         </q-card-section>
                         <q-card-section>
 
-
                             <div class="text-center q-ma-md">
+
                                 <div class="col ">
-                                    <q-btn size="xl" class="full-width q-pa-md" type="a"
-                                        href="http://wa.me/+5527981823734" target="_blank"
-                                        style="background: var(--color-primary); color: var(--color-secondary)">
-                                        Faça seu pedido pelo
-                                        WhatsApp</q-btn>
 
-                                </div>
-
-                                <div class="col q-mt-md">
-                                    <q-btn size="xl" class="full-width q-pa-md" type="a"
-                                        href="https://www.marykay.com.br/barbaraff" target="_blank"
-                                        style="background: var(--color-primary); color: var(--color-secondary)">
-                                        Visite o meu site MK!<br />
-                                        Obtenha informações sobre produtos <br /> e faça seu pedido</q-btn>
+                                    <q-btn v-for="(link,index) in links" :key="index" size="xl"
+                                        class="full-width q-pa-md q-mt-sm" type="a" :href="link.url" target="_blank"
+                                        style="background: var(--color-primary); color: var(--color-secondary)"
+                                        v-html="link.text" />
 
                                 </div>
 
@@ -80,7 +71,12 @@
 
                         </q-card-section>
                     </q-card>
+
+                    <div class="fixed-bottom text-right q-mr-sm">&copy; {{ new Date().getFullYear() }}</div>
+
                 </q-page>
+
+
             </q-page-container>
         </q-layout>
 
@@ -90,15 +86,27 @@
     <script src="https://cdn.jsdelivr.net/npm/quasar@1.14.5/dist/quasar.umd.min.js"></script>
 
     <script>
+
+        const links = [
+            {
+                url: "http://wa.me/+5527981823734",
+                text: "Faça seu pedido pelo WhatsApp"
+            },
+            {
+                url: "https://www.marykay.com.br/barbaraff",
+                text: "Visite o meu site MK! <br /> Obtenha informações sobre produtos e faça seu pedido"
+            },
+        ]
+
         new Vue({
             el: '#q-app',
             data: function () {
                 return {
-                    username: "a",
-                    password: "b"
+                    links,
                 }
             }
         })
+
     </script>
 </body>
 
