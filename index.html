@@ -41,7 +41,7 @@
                         <q-card-section class="q-pa-none">
                             <div class="text-center q-ma-md">
                                 <!-- <q-avatar size="103px" class="absolute-center shadow-10"> -->
-                                <img src="avatar.jfif" style="border-radius: 50%; width: 200px;">
+                                <img src="avatar.jfif" style="border-radius: 50%; width: 200px;" class="shadow-24">
                                 <!-- </q-avatar> -->
                             </div>
                         </q-card-section>
@@ -61,7 +61,8 @@
                                 <div class="col ">
 
                                     <q-btn v-for="(link,index) in links" :key="index" size="xl"
-                                        class="full-width q-pa-md q-mt-sm" type="a" :href="link.url" target="_blank"
+                                        class="full-width q-pa-md q-mt-sm shadow-24" type="a" :href="link.url"
+                                        target="_blank"
                                         style="background: var(--color-primary); color: var(--color-secondary)"
                                         v-html="link.text" />
 
